@@ -9,12 +9,13 @@ import SwiftUI
 
 struct VideoListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Video!")
     }
 }
 
 struct VideoListView_Previews: PreviewProvider {
     static var previews: some View {
         VideoListView()
+            .previewDevice("iPhone 11 Pro")
     }
 }

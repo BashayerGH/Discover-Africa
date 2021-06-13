@@ -7,7 +7,4 @@
 */
 
 
-AfricaMain: {
-    ar: "",
-    en: ""
-}
+AfricaMain = "Africa";

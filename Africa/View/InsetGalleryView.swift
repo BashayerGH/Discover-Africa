@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct InsetGalleryView: View {
+    // Mark - PROPERTIES
+    var animal: Animal
+
+    // Mark - BODY
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .center, spacing: 15) {
+                    ForEach(animal.gallery, id:\.self) { item in
+                    Image(item)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                        .cornerRadius(12)
+                }//: ForEach
+            }//: Stack
+        }//: ScrollView
     }
 }
-
+    // Mark - PREVIEW
 struct InsetGalleryView_Previews: PreviewProvider {
+    static var animal: [Animal] = Bundle.main.decode("animals.json")
     static var previews: some View {
-        InsetGalleryView()
+        InsetGalleryView(animal: animal[2])
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }
